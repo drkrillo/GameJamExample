@@ -1,8 +1,9 @@
 import ReactEcs, { Label, ReactEcsRenderer, UiEntity } from '@dcl/sdk/react-ecs'
-import { isLevelWon, uiLevelWon } from '.'
+import { isGameWon } from '.'
 
 const uiComponent = () => [
     UIModule1(),
+    UIModule2(),
   ]
 
 export function setupUi() {
@@ -15,16 +16,33 @@ export function setupUi() {
     return (
       <UiEntity
         uiTransform={{
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'space-between',
           positionType: 'absolute',
-          position: { right: '50%', bottom: '90%' },
+          position: { right: '50%', top: '10%' },
         }}
       >
-        <Label value={String(isLevelWon())} fontSize={28} textAlign="middle-center" />
+        <Label 
+            value={String(isGameWon())} 
+            fontSize={28} 
+            textAlign="middle-center"
+         />
       </UiEntity>
     )
   }
   
+  export function UIModule2() {
+    return (
+      <UiEntity
+        uiTransform={{
+          positionType: 'absolute',
+          position: { right: '50%', bottom: '3%' },
+        }}
+      >
+        <Label
+          value="Here's some more UI!"
+          fontSize={25}
+          textAlign="middle-center"
+        />
+      </UiEntity>
+    )
+  }
   
