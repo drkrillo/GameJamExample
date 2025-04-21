@@ -21,8 +21,8 @@ export function setupUi() {
         }}
       >
         <Label 
-            value={String(isGameWon())} 
-            fontSize={28} 
+            value={String(isGameWon())}
+            fontSize={35} 
             textAlign="middle-center"
          />
       </UiEntity>
